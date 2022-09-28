@@ -23,7 +23,7 @@ const CON_getTrack = ({ getTrack }) =>{
                 "Content-Type": "application/json"
               },
               statusCode: 200,
-              body: { view },
+              body:  view ,
           
             };
           } catch (e) {

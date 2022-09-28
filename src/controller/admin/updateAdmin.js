@@ -21,7 +21,7 @@ const CON_updateAdmin = ({ updateAdmin }) => {
             "Content-Type": "application/json",
           },
           statusCode: 200,
-          body: { view },
+          body:  view ,
         };
 
 

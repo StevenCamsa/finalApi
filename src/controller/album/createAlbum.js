@@ -8,18 +8,20 @@ const CON_createAlbum = ({ createAlbum }) => {
         const { source = {}, ...info } = httpRequest.body;
         source.ip = httpRequest.ip;
         source.browser = httpRequest.headers["User-Agent"];
+        const path = `${httpRequest.file.destination}${httpRequest.file.filename}`
+        
+        info.album_img = path
         const toView = {
-          ...info,
-          source,
+          ...info
         };
-        console.log(toView);
+
         const view = await createAlbum(toView);
         return {
           headers: {
             "Content-Type": "application/json",
           },
           statusCode: 201,
-          body: { view },
+          body:  view ,
         };
       } catch (e) {
         console.log(e);

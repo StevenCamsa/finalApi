@@ -18,7 +18,7 @@ const CON_createAdmin = ({ createAdmin }) => {
             "Content-Type": "application/json",
           },
           statusCode: 201,
-          body: { view },
+          body:  view ,
         };
       } catch (e) {
         console.log(e);

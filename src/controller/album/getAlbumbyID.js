@@ -28,7 +28,7 @@ const CON_getAlbumbyID = ({ getAlbumbyID }) =>{
                 "Content-Type": "application/json"
               },
               statusCode: 200,
-              body: { view },
+              body:  view ,
           
             };
           } catch (e) {

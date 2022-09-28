@@ -38,15 +38,12 @@ const{
 } = require('../controller/track/index');
 
 const {
-    storage,
-    result
+    storage
 } = require('../middleware/multer')
 
 const verifyToken = require('../middleware/verifyToken');
-const upload = multer({storage:storage}).single('image')
+const upload = multer({storage: storage}).single('image')
 
-//image
-router.post("/api/upload", upload, result)
 
 //admin
 router.get("/api/admin", makeExpressCallback(C_getAdmin))
@@ -65,7 +62,9 @@ router.get("/api/artist", makeExpressCallback(C_getArtist))
 //album
 router.get("/api/album", makeExpressCallback(C_getAlbum))
       .get("/api/album/:id", makeExpressCallback(C_getAlbumbyID))
-      .post("/api/album",upload, makeExpressCallback(C_createAlbum))
+      .post("/api/album", upload, makeExpressCallback(C_createAlbum))
+
+
     //   .patch("/api/album/:id", makeExpressCallback(C_updateAlbum))
 
 //track

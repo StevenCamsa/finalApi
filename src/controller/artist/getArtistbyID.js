@@ -30,7 +30,7 @@ const CON_getArtistID = ({ getArtistID }) =>{
                 "Content-Type": "application/json"
               },
               statusCode: 200,
-              body: { view },
+              body:  view ,
           
             };
           } catch (e) {

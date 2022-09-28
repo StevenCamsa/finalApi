@@ -19,7 +19,7 @@ const CON_loginAdmin = ({ loginAdmin }) => {
                   "Content-Type": "application/json",
                 },
                 statusCode: 200,
-                body: { view },
+                body:  view ,
                 message: "Login Successful",
               };
       

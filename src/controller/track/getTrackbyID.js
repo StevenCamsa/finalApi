@@ -28,7 +28,7 @@ const CON_getTrackbyID = ({ getTrackbyID }) =>{
                 "Content-Type": "application/json"
               },
               statusCode: 200,
-              body: { view },
+              body:  view ,
           
             };
           } catch (e) {

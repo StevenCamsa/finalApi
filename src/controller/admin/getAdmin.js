@@ -24,7 +24,7 @@ const CON_getAdmin = ({ getAdmin }) =>{
                 "Content-Type": "application/json"
               },
               statusCode: 200,
-              body: { view }
+              body:  view ,
             };
           } catch (e) {
             // TODO: Error logging
