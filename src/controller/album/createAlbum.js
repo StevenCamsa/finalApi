@@ -9,12 +9,14 @@ const CON_createAlbum = ({ createAlbum }) => {
         source.ip = httpRequest.ip;
         source.browser = httpRequest.headers["User-Agent"];
         const path = `${httpRequest.file.destination}${httpRequest.file.filename}`
-        
+        const file = httpRequest.file;
+       
         info.album_img = path
         const toView = {
-          ...info
+          ...info,
+          file
         };
-
+        console.log(toView);
         const view = await createAlbum(toView);
         return {
           headers: {

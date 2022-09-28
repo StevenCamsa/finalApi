@@ -1,8 +1,9 @@
-const UC_createAlbum = ({albumDb, makeAlbumEntity}) => {
+const UC_createAlbum = ({albumDb, makeAlbumEntity, upload}) => {
 
     return async function add (data) {
        
             const {album_name, artist_id, album_img} = data;
+            // const data2 = file.destination + file.filename
     
             const isExisting = await albumDb.isExisting({album_name})
             .catch(e => console.log(e));
@@ -12,10 +13,6 @@ const UC_createAlbum = ({albumDb, makeAlbumEntity}) => {
             }
 
             const entity = await makeAlbumEntity({ data })
-     
-     
-            // console.log(isExisting)
-
             const res = await albumDb.createAlbum({
                 album_name: entity.getAlbum_Name(),
                 artist_id: entity.getArtist_Id(),

@@ -38,11 +38,11 @@ const{
 } = require('../controller/track/index');
 
 const {
-    storage
+    upload
 } = require('../middleware/multer')
 
 const verifyToken = require('../middleware/verifyToken');
-const upload = multer({storage: storage}).single('image')
+
 
 
 //admin
