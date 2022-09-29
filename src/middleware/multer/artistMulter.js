@@ -5,17 +5,19 @@ const path = require('path')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/')
+        cb(null, 'uploads/artist_img/')
 
     },
     filename: function (req, file, cb, ) {
-        cb(null, Date.now() + file.originalname)
+        cb(null, file.originalname)
+        console.log(file);
     }
 })
 
 
 const fileFilter = (req, file, cb) => {
     const ext = path.extname(file.originalname)
+    
    
     if (ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
         return cb(new Error('Only Images are allowed'))
@@ -24,7 +26,7 @@ const fileFilter = (req, file, cb) => {
 }
 
 
-const upload = multer({
+const uploadArtist = multer({
     storage: storage,
     fileFilter: fileFilter
 
@@ -35,5 +37,5 @@ const upload = multer({
 
 
 module.exports = {
-    upload
+    uploadArtist
 }

@@ -1,4 +1,4 @@
-const UC_createAlbum = ({albumDb, makeAlbumEntity, upload}) => {
+const UC_createAlbum = ({albumDb, makeAlbumEntity}) => {
 
     return async function add (data) {
        

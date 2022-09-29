@@ -1,9 +1,4 @@
 const albumDb = require('../../data-access/album/index');
-const multer = require('multer')
-const upload = require('../../middleware/multer')
-
-const result = require('../../middleware/multer')
-
 
 const {
     makeAlbumEntity
@@ -21,7 +16,7 @@ const UC_createAlbum = require('../album/createAlbum');
 
 const getAlbum = UC_getAlbum({albumDb});
 const getAlbumbyID = UC_getAlbumbyID({albumDb});
-const createAlbum = UC_createAlbum({albumDb, makeAlbumEntity,upload});
+const createAlbum = UC_createAlbum({albumDb, makeAlbumEntity});
 // const updateAlbum = UC_updateAlbum({albumDb, updateAlbumEntity});
 
 

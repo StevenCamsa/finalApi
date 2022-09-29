@@ -53,10 +53,10 @@ async function isExisting({artist_name}) {
     }
 }
 
-async function createArtist({artist_name, status}){
+async function createArtist({artist_name, artist_img, status}){
     const con = await connect()
-    const sql = `INSERT INTO artist(artist_name,status) VALUES ($1, $2) RETURNING *`
-    const params = [artist_name, "active"];
+    const sql = `INSERT INTO artist(artist_name, artist_img, status) VALUES ($1, $2, $3) RETURNING *`
+    const params = [artist_name, artist_img, "active"];
     
     try {
 

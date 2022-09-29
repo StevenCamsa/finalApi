@@ -17,8 +17,8 @@ const {
 
 const{
     C_getArtist,
-    C_getArtistID
-    // C_createArtist,
+    C_getArtistID,
+    C_createArtist
     // C_updateArtist,
  
 } = require('../controller/artist/index');
@@ -33,13 +33,24 @@ const{
 
 const{
     C_getTrack,
-    C_getTrackbyID
-    // C_createTrack
+    C_getTrackbyID,
+    C_createTrack
 } = require('../controller/track/index');
 
 const {
-    upload
-} = require('../middleware/multer')
+    uploadAlbum
+ 
+} = require('../middleware/multer/albumMulter')
+
+const {
+    uploadArtist
+} = require('../middleware/multer/artistMulter')
+
+const {
+    uploadTrack
+    
+} = require('../middleware/multer/trackMulter')
+
 
 const verifyToken = require('../middleware/verifyToken');
 
@@ -55,14 +66,14 @@ router.get("/api/admin", makeExpressCallback(C_getAdmin))
 //artist
 router.get("/api/artist", makeExpressCallback(C_getArtist))
       .get("/api/artist/:id", makeExpressCallback(C_getArtistID))
-    //   .post("/api/artist", makeExpressCallback(C_createArtist))
+      .post("/api/artist", uploadArtist,makeExpressCallback(C_createArtist))
     //   .patch("/api/artist/:id", makeExpressCallback(C_updateArtist))
 
 
 //album
 router.get("/api/album", makeExpressCallback(C_getAlbum))
       .get("/api/album/:id", makeExpressCallback(C_getAlbumbyID))
-      .post("/api/album", upload, makeExpressCallback(C_createAlbum))
+      .post("/api/album", uploadAlbum, makeExpressCallback(C_createAlbum))
 
 
     //   .patch("/api/album/:id", makeExpressCallback(C_updateAlbum))
@@ -70,7 +81,7 @@ router.get("/api/album", makeExpressCallback(C_getAlbum))
 //track
 router.get("/api/track", makeExpressCallback(C_getTrack))
       .get("/api/track/:id", makeExpressCallback(C_getTrackbyID))
-    //   .post("/api/track",makeExpressCallback(C_createTrack))
+      .post("/api/track", uploadTrack, makeExpressCallback(C_createTrack))
 
 
 

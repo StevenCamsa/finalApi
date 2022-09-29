@@ -50,10 +50,10 @@ async function isExisting({track_name}) {
     }
 };
 
-async function createTrack({track_name,  artist_id, album_id, played_id, location, songduration, numberofplays, status}){
+async function createTrack({track_name,  artist_id, album_id, track_img, track_mp3, songduration, time, numberofplays, status}){
     const con = await connect()
-    const sql = `INSERT INTO track(track_name,  artist_id, album_id, played_id, location, songduration, numberofplays, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8 ) RETURNING *`
-    const params = [track_name,  artist_id, album_id, played_id, location, songduration, numberofplays,  "active"];
+    const sql = `INSERT INTO track(track_name,  artist_id, album_id, track_img, track_mp3, songduration, time , numberofplays, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9 ) RETURNING *`
+    const params = [track_name,  artist_id, album_id, track_img, track_mp3, songduration, time, numberofplays,  "active"];
     
     try {
 
