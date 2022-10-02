@@ -49,8 +49,7 @@ CREATE TABLE track (
     album_id INT,
     track_img TEXT,
     track_mp3 TEXT,
-    songDuration INT,
-    time TIMESTAMP,
+    play boolean,
     numberofplays INT,
     status CHAR(10),
 
@@ -58,5 +57,5 @@ CREATE TABLE track (
     FOREIGN KEY (album_id) REFERENCES album(album_id) 
 );
 
-INSERT INTO track(track_name, artist_id, album_id, track_img, track_mp3, songDuration, time,  numberofplays, status)
-VALUES ('track','2', '2','/upload/picture', '/upload/picture','30',NOW(),'2','active')
+INSERT INTO track(track_name, artist_id, album_id, track_img, track_mp3, play,   numberofplays, status)
+VALUES ('track','2', '2','/upload/picture', '/upload/picture','30','2','active')

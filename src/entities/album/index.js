@@ -1,15 +1,15 @@
 const makeAlbumEntity = require('./createAlbum')
-// const updateAlbumEntity = require ('./updateAlbum')
+const updateAlbumEntity = require ('./updateAlbum')
 
 
 const albumEntity = Object.freeze({
-    // updateAlbumEntity
+    updateAlbumEntity,
     makeAlbumEntity
     
 })
 
 module.exports = albumEntity
 module.exports = {
-    // updateAlbumEntity,
+    updateAlbumEntity,
     makeAlbumEntity
 }

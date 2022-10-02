@@ -67,10 +67,10 @@ async function createAlbum({album_name, artist_id,album_img, status}){
     
 };
 
-async function updateAlbum({album_id, album_name, artist_id}){
+async function updateAlbum({album_id, album_name, album_img, artist_id}){
     const con = await connect();
-    const sql = `UPDATE album SET album_name = $1, artist_id = $2 WHERE album_id = $3 RETURNING *`
-    const params = [album_name, artist_id, album_id]
+    const sql = `UPDATE album SET album_name = $1, artist_id = $2, album_img = $3 WHERE album_id = $4 RETURNING *`
+    const params = [album_name, artist_id, album_img, album_id]
     console.log(params);
     try {
         const result = await con.query(sql,params)

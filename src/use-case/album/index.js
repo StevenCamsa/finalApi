@@ -1,15 +1,15 @@
 const albumDb = require('../../data-access/album/index');
 
 const {
-    makeAlbumEntity
-    // updateAlbumEntity
+    makeAlbumEntity,
+    updateAlbumEntity
 
 } = require('../../entities/album/index')
 
 
 const UC_getAlbum = require('../album/getAlbum');
 const UC_getAlbumbyID = require ('../album/getAlbumbyID');
-// const UC_updateAlbum = require ('../album/updateAlbum');
+const UC_updateAlbum = require ('../album/updateAlbum');
 const UC_createAlbum = require('../album/createAlbum');
 
 
@@ -17,14 +17,14 @@ const UC_createAlbum = require('../album/createAlbum');
 const getAlbum = UC_getAlbum({albumDb});
 const getAlbumbyID = UC_getAlbumbyID({albumDb});
 const createAlbum = UC_createAlbum({albumDb, makeAlbumEntity});
-// const updateAlbum = UC_updateAlbum({albumDb, updateAlbumEntity});
+const updateAlbum = UC_updateAlbum({albumDb, updateAlbumEntity});
 
 
 
 const albumService = Object.freeze({
     getAlbum,
     getAlbumbyID,
-    // updateAlbum,
+    updateAlbum,
     createAlbum
 
 
@@ -34,7 +34,7 @@ module.exports = albumService;
 module.exports = {
     getAlbum,
     getAlbumbyID,
-    // updateAlbum,
+    updateAlbum,
     createAlbum
 
 }

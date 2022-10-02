@@ -70,11 +70,11 @@ async function createArtist({artist_name, artist_img, status}){
     
 };
 
-async function updateArtist({artist_name, artist_id}){
+async function updateArtist({artist_name,artist_img, artist_id}){
     const con = await connect();
-    const sql = `UPDATE artist SET artist_name = $1 WHERE artist_id = $2 RETURNING *`
-    const params = [artist_name, artist_id]
-    console.log(params);
+    const sql = `UPDATE artist SET artist_name = $1, artist_img = $2 WHERE artist_id = $3 RETURNING *`
+    const params = [artist_name, artist_img, artist_id]
+
     try {
         const result = await con.query(sql,params)
         return result.rows

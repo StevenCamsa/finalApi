@@ -18,15 +18,15 @@ const {
 const{
     C_getArtist,
     C_getArtistID,
-    C_createArtist
-    // C_updateArtist,
+    C_createArtist,
+    C_updateArtist
  
 } = require('../controller/artist/index');
 
 const{
     C_getAlbum,
     C_getAlbumbyID,
-    // C_updateAlbum,
+    C_updateAlbum,
     C_createAlbum
 
 } = require('../controller/album/index');
@@ -34,7 +34,9 @@ const{
 const{
     C_getTrack,
     C_getTrackbyID,
-    C_createTrack
+    C_createTrack,
+    C_updateTrack,
+    C_updatePlay
 } = require('../controller/track/index');
 
 const {
@@ -67,21 +69,21 @@ router.get("/api/admin", makeExpressCallback(C_getAdmin))
 router.get("/api/artist", makeExpressCallback(C_getArtist))
       .get("/api/artist/:id", makeExpressCallback(C_getArtistID))
       .post("/api/artist", uploadArtist,makeExpressCallback(C_createArtist))
-    //   .patch("/api/artist/:id", makeExpressCallback(C_updateArtist))
+      .patch("/api/artist/:id",uploadArtist, makeExpressCallback(C_updateArtist))
 
 
 //album
 router.get("/api/album", makeExpressCallback(C_getAlbum))
       .get("/api/album/:id", makeExpressCallback(C_getAlbumbyID))
       .post("/api/album", uploadAlbum, makeExpressCallback(C_createAlbum))
-
-
-    //   .patch("/api/album/:id", makeExpressCallback(C_updateAlbum))
+      .patch("/api/album/:id",uploadAlbum, makeExpressCallback(C_updateAlbum))
 
 //track
 router.get("/api/track", makeExpressCallback(C_getTrack))
       .get("/api/track/:id", makeExpressCallback(C_getTrackbyID))
       .post("/api/track", uploadTrack, makeExpressCallback(C_createTrack))
+      .patch("/api/track/:id", uploadTrack, makeExpressCallback(C_updateTrack))
+      .patch("/api/track/play/:id", makeExpressCallback(C_updatePlay))
 
 
 

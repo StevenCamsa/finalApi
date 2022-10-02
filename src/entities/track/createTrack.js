@@ -1,6 +1,6 @@
 const makeTrackEntity = ({ data }) => {
 
-    const { track_name,  artist_id, album_id, track_img, track_mp3, songduration, time, numberofplays, status  } = data;
+    const { track_name,  artist_id, album_id, track_img, track_mp3, numberofplays, status  } = data;
 
         if(!track_name){
             throw new Error("Track name is required.")
@@ -12,9 +12,6 @@ const makeTrackEntity = ({ data }) => {
             throw new Error("Album  is required.")
          }
          
-         if(!songduration){
-            throw new Error("songdu is required.")
-         }
 
 
          return Object.freeze({
@@ -23,8 +20,6 @@ const makeTrackEntity = ({ data }) => {
              getAlbum_id: () => album_id,
              getTrack_img: () => track_img,
              getTrack_mp3: () => track_mp3,
-             getsongduration: () => songduration,
-             getTime: () => time,
              getnumberofplays:() => numberofplays
              
          });

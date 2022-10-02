@@ -5,8 +5,8 @@ const UC_updateAdmin = ({adminDb, updateAdminEntity}) => {
 
       
         const prevData = await adminDb.getAdminbyID({ admin_id:id })
-        // console.log(userid);
-        console.log(prevData);
+
+        // console.log(prevData);
 
         if(prevData.rowCount === 0){ throw new Error ("Id not found") }
 

@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         if(ext !== '.mp3') {
             cb(null, 'uploads/track_img/')
         } else {
-            cb(null, 'uploads/track_songs')
+            cb(null, 'uploads/track_songs/')
         } 
         // console.log(file);
 

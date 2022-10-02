@@ -23,8 +23,6 @@ const UC_createTrack = ({trackDb, makeTrackEntity}) => {
                 album_id: entity.getAlbum_id(),
                 track_img: entity.getTrack_img(),
                 track_mp3: entity.getTrack_mp3(),
-                songduration: entity.getsongduration(),
-                time: entity.getTime(),
                 numberofplays: entity.getnumberofplays()
  
             })
