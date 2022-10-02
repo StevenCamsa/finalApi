@@ -22,7 +22,8 @@ const storage = multer.diskStorage({
     }
 
 
-})
+
+});
 
 
 const fileFilter = (req, file, cb) => {
@@ -31,7 +32,7 @@ const fileFilter = (req, file, cb) => {
         return cb(new Error('denied'))
     } else 
     cb(null, true)
-}
+};
 
 
 const uploadTrack = multer({
