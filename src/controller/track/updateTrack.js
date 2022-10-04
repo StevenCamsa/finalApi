@@ -10,10 +10,9 @@ const CON_updateTrack = ({ updateTrack }) => {
         source.ip = httpRequest.ip;
         source.browser = httpRequest.headers["User-Agent"];
         const imgPath = `${httpRequest.files.image[0].destination}${httpRequest.files.image[0].filename}`
-        const songPath = `${httpRequest.files.songs[0].destination}${httpRequest.files.songs[0].filename}`
+      
 
         info.track_img = imgPath
-        info.track_mp3 = songPath
 
         const toView = {
           id: httpRequest.params.id,

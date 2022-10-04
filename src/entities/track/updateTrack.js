@@ -1,6 +1,6 @@
 const updateTrackEntity = ({ data }) => {
 
-    const { track_name,  artist_id, album_id, track_img, track_mp3, status  } = data;
+    const { track_name,  artist_id, album_id, track_img, status  } = data;
 
         if(!track_name){
             track_name = track_name;
@@ -17,8 +17,8 @@ const updateTrackEntity = ({ data }) => {
              getTrack_name: () => track_name,
              getArtist_id: () => artist_id,
              getAlbum_id: () => album_id,
-             getTrack_img: () => track_img,
-             getTrack_mp3: () => track_mp3
+             getTrack_img: () => track_img
+  
              
          });
     };

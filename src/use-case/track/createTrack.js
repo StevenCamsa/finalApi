@@ -1,7 +1,7 @@
 const UC_createTrack = ({trackDb, makeTrackEntity}) => {
 
     return async function add (data) {
-            const {track_name} = data;
+            const {track_name, track_legth, lastplayed} = data;
           
             let result = {};
 
@@ -23,7 +23,9 @@ const UC_createTrack = ({trackDb, makeTrackEntity}) => {
                 album_id: entity.getAlbum_id(),
                 track_img: entity.getTrack_img(),
                 track_mp3: entity.getTrack_mp3(),
-                numberofplays: entity.getnumberofplays()
+                numberofplays: entity.getnumberofplays(),
+                lastplayed:lastplayed,
+                track_legth:track_legth
  
             })
             .catch(e => console.log(e))
