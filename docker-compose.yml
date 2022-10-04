@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    container_name: playlist api
+    container_name: playlist_api
     ports:
       - 4005:3000
 
