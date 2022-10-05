@@ -14,7 +14,7 @@ const albumDb = () =>{
 
 async function getAlbum(){
     const con = await connect()
-    const sql = `SELECT album_id, album_name, artist_name ,album_img, album.status FROM album, artist WHERE album.artist_id = artist.artist_id AND album.status = 'active'`
+    const sql = `SELECT album_id, album_name, artist.artist_id, artist_name ,album_img, album.status FROM album, artist WHERE album.artist_id = artist.artist_id AND album.status = 'active'`
     try {
         const result = await con.query (sql)
         return result.rows
@@ -25,7 +25,7 @@ async function getAlbum(){
 
 async function getAlbumbyID( {album_id} ){
     const con = await connect()
-    const sql = `SELECT album_id, album_name, artist_name ,album_img, album.status FROM album, artist WHERE album.artist_id = artist.artist_id AND album.album_id = $1 AND album.status = 'active'`
+    const sql = `SELECT album_id, album_name, artist_name, artist.artist_id,album_img, album.status FROM album, artist WHERE album.artist_id = artist.artist_id AND album.album_id = $1 AND album.status = 'active'`
     const params = [album_id.id]
    
     try {

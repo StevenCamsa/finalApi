@@ -2,25 +2,14 @@ version: '3'
 services:
   api:
     build:
-      context: .
+      context: finalApi/
       dockerfile: Dockerfile
     restart: unless-stopped
     container_name: playlist_api
     ports:
-      - 4005:3000
-
-  db:
-    image: 'postgres'
-    ports: 
-    - '5433:5432'
-    environment:
-      POSTGRES_PASSWORD: '1234'
-      POSTGRES_USER: 'postgres'
-      POSTGRES_DB: 'finalPlaylist'
+      - 3000:3000
     volumes:
-      - data:/var/lib/postgresql/data
-      
-
+    - api-data:/usr/src/uploads
 
 volumes:
- data:
+ api-data:
