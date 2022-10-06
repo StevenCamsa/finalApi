@@ -9,7 +9,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-    - api-data:/usr/src/uploads
+    - playlist-data:/usr/src/
 
 volumes:
- api-data:
+ playlist-data:

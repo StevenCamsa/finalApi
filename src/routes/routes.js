@@ -68,21 +68,21 @@ router.get("/api/admin", makeExpressCallback(C_getAdmin))
 //artist
 router.get("/api/artist", makeExpressCallback(C_getArtist))
       .get("/api/artist/:id", makeExpressCallback(C_getArtistID))
-      .post("/api/artist", uploadArtist,makeExpressCallback(C_createArtist))
-      .patch("/api/artist/:id",uploadArtist, makeExpressCallback(C_updateArtist))
+      .post("/api/artist", verifyToken, uploadArtist,makeExpressCallback(C_createArtist))
+      .patch("/api/artist/:id",verifyToken, uploadArtist, makeExpressCallback(C_updateArtist))
 
 
 //album
 router.get("/api/album", makeExpressCallback(C_getAlbum))
       .get("/api/album/:id", makeExpressCallback(C_getAlbumbyID))
-      .post("/api/album", uploadAlbum, makeExpressCallback(C_createAlbum))
-      .patch("/api/album/:id",uploadAlbum, makeExpressCallback(C_updateAlbum))
+      .post("/api/album", verifyToken, uploadAlbum, makeExpressCallback(C_createAlbum))
+      .patch("/api/album/:id", verifyToken, uploadAlbum, makeExpressCallback(C_updateAlbum))
 
 //track
 router.get("/api/track", makeExpressCallback(C_getTrack))
       .get("/api/track/:id", makeExpressCallback(C_getTrackbyID))
-      .post("/api/track", uploadTrack, makeExpressCallback(C_createTrack))
-      .patch("/api/track/:id", uploadTrack, makeExpressCallback(C_updateTrack))
+      .post("/api/track", verifyToken, uploadTrack, makeExpressCallback(C_createTrack))
+      .patch("/api/track/:id", verifyToken, uploadTrack, makeExpressCallback(C_updateTrack))
       .patch("/api/track/play/:id", makeExpressCallback(C_updatePlay))
 
 
