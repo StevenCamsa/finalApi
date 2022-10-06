@@ -1,15 +1,23 @@
-version: '3'
+version: '3.9'
 services:
   api:
     build:
-      context: finalApi/
+      context: ./finalapi
       dockerfile: Dockerfile
     restart: unless-stopped
     container_name: playlist_api
+    privileged: true
+    volumes:
+      - playlist-data:/usr/src
+#      - ./finalapi/uploads:/usr/src/uploads:rw
+     # - /finalapi/uploads/album_img:/usr/src/uploads/album_img
+     # - /finalapi/uploads/track_img:/usr/src/uploads/track_img
+     # - /finalapi/uploads/track_songs:/usr/src/uploads/track_songs
+#      - type: bind
+#        source: ./finalapi
+#        target: /usr/src
+
     ports:
       - 3000:3000
-    volumes:
-    - playlist-data:/usr/src/
-
 volumes:
  playlist-data:
