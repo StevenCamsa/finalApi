@@ -1,6 +1,6 @@
 
 FROM node:14-alpine
-WORKDIR /api/img
+WORKDIR /api
 COPY package*.json ./
 
 RUN npm config set registry https://registry.npmjs.org/

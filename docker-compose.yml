@@ -17,4 +17,6 @@ services:
     container_name: playlist_app
     ports:
      - 3301:81
-
+volumes:
+  uploads-imgs:
+  image:
