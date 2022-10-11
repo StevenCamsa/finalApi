@@ -9,7 +9,7 @@ const makeAdminEntity = ({data}) => {
         throw new Error("Username and Password are required.")
     }
     if (!name) {
-        throw new Error("name is required.")
+        throw new Error("Name is required.")
     }
     if (!username) {
         throw new Error("Username is required.")
@@ -17,9 +17,7 @@ const makeAdminEntity = ({data}) => {
     if (!password) {
         throw new Error("Password is required.")
     }
-    if (password < 6) {
-        throw new Error("Password must be at least 6 characters.")
-    }
+
 
 
 

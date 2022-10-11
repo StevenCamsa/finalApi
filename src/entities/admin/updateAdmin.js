@@ -4,7 +4,7 @@ const updateAdminEntity = ({data}) => {
 
 
     if (!name) {
-        throw new Error("name is required.")
+        throw new Error("Name is required.")
     }
     if (!username) {
         throw new Error("Username is required.")
@@ -12,9 +12,7 @@ const updateAdminEntity = ({data}) => {
     if (!password) {
         throw new Error("Password is required.")
     }
-    if (password < 6) {
-        throw new Error("Password must be at least 6 characters.")
-    }
+
 
 
     return Object.freeze({
