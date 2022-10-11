@@ -4,10 +4,10 @@ const updateAlbumEntity = ({data}) => {
 
 
     if(!album_name) {
-        album_name = album_name;
+        throw new Error("Album Name is required.")
     }
     if(!artist_id){
-        artist_id = artist_id;   
+        throw new Error("Artist ID is required.")
     }
 
     return Object.freeze({

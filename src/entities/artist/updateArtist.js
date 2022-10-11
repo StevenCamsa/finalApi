@@ -4,7 +4,7 @@ const updateArtistEntity = ({data}) => {
 
 
     if(!artist_name) {
-        artist_name = artist_name;
+        throw new Error("Artist Name is required.")
     }
  
     return Object.freeze({

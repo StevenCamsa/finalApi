@@ -1,24 +1,24 @@
 const updateAdminEntity = ({data}) => {
 
-    const {name,username, password} = data;
+    const {name, username, password} = data;
 
 
-    if(!name) {
-        name = name;
+    if (!name) {
+        throw new Error("name is required.")
     }
-    if(!username) {
-        username = username;
+    if (!username) {
+        throw new Error("Username is required.")
     }
-    if(!password){
-        password = password;   
+    if (!password) {
+        throw new Error("Password is required.")
     }
-    if(password < 6){
+    if (password < 6) {
         throw new Error("Password must be at least 6 characters.")
     }
 
 
     return Object.freeze({
-        getName:() => name,
+        getName: () => name,
         getUsername: () => username,
         getPassword: () => password
 

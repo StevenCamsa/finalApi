@@ -75,14 +75,14 @@ router.get("/api/artist", makeExpressCallback(C_getArtist))
 //album
 router.get("/api/album", makeExpressCallback(C_getAlbum))
       .get("/api/album/:id", makeExpressCallback(C_getAlbumbyID))
-      .post("/api/album", verifyToken, uploadAlbum, makeExpressCallback(C_createAlbum))
-      .patch("/api/album/:id", verifyToken, uploadAlbum, makeExpressCallback(C_updateAlbum))
+      .post("/api/album", uploadAlbum, makeExpressCallback(C_createAlbum))
+      .patch("/api/album/:id", uploadAlbum, makeExpressCallback(C_updateAlbum))
 
 //track
 router.get("/api/track", makeExpressCallback(C_getTrack))
       .get("/api/track/:id", makeExpressCallback(C_getTrackbyID))
-      .post("/api/track", verifyToken, uploadTrack, makeExpressCallback(C_createTrack))
-      .patch("/api/track/:id", verifyToken, uploadTrack, makeExpressCallback(C_updateTrack))
+      .post("/api/track", uploadTrack, makeExpressCallback(C_createTrack))
+      .patch("/api/track/:id", uploadTrack, makeExpressCallback(C_updateTrack))
       .patch("/api/track/play/:id", makeExpressCallback(C_updatePlay))
 
 

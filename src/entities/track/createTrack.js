@@ -2,6 +2,18 @@ const makeTrackEntity = ({ data }) => {
 
     const { track_name,  artist_id, album_id, track_img, track_mp3, numberofplays, status  } = data;
 
+        if (!track_name && !artist_id && !album_id) {
+            throw new Error("Track name, Artist ID, and album ID are required.")
+        }
+        if (!track_name && !artist_id ) {
+            throw new Error("Track name and Artist ID are required.")
+        }
+        if (!artist_id && !album_id) {
+            throw new Error("Artist ID, and album ID are required.")
+        }
+        if (!track_name && !album_id) {
+            throw new Error("Track name and album ID are required.")
+        }
         if(!track_name){
             throw new Error("Track name is required.")
          }
